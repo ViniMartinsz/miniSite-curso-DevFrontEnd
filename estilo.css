@@ -1,0 +1,131 @@
+/*  Seletor UNIVERSAL */
+* { box-sizing: border-box;}
+
+
+body {
+    /* background-color: lightblue; */
+    background-image: url(imagens/fundo01.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#container {
+    background-color: white;
+    
+    /* Centralizando um bloco: declarar largura e margem automática */
+    width: 80%;
+    margin: auto;
+    padding: 2%;} 
+
+    /* Tornando as imagens responsivas */
+    img { max-width: 100%;
+        margin: auto;
+        box-shadow: black  0 0 10px;
+        padding: 2px;
+        padding-top: 2px;
+        text-align: center;
+        width: auto;
+        animation-name: anima_imagem;
+        animation-duration: 2s;
+    }
+        
+
+    /* Seletor Descendente */
+    ol li { font-weight: bold;}
+
+    h1 {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+
+    /* Etapa 2: Chamada/configuração da animação */
+    animation-name: mudacor;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Etapa 1: Regra de Animação */
+@keyframes mudacor{
+    /* from { color: red }
+     to{ color: white }*/
+    
+    /* Versão 2 (mais estados) */
+    0% { color: white}
+    25% { color: rgb(255, 0, 255)}
+    50% { color: red}
+    
+    }
+
+
+    @keyframes anima_imagem {
+        from {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        to{
+            opacity: 1;
+            transform: scale(1);
+        }
+
+    }
+
+h2 { 
+    text-transform: uppercase ;
+    border-bottom: solid 3px;
+    padding-bottom: 5px;
+}
+
+/* Regras para links */
+nav { text-align: center;}
+nav a {
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    font-weight: bold;
+    padding: 10px;
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+
+}
+
+/* Seletor ID ou CLASSE */
+.centralizar { text-align: center;}
+.sombra-texto { text-shadow: black 3px 3px 5px;}
+.destaque { background-color: yellow; }
+
+
+/* Regra de interação com o link:
+:hover -> pseudo-classe de passar o mouse
+:focus -> pseudo-classe de foco  */
+nav a:hover, nav a:focus {
+    background-color:gray;
+    color: black;
+}
+
+figure {
+    margin: auto;
+    box-shadow: black  0 0 10px;
+    padding: 2px;
+    padding-top: 2px;
+    text-align: center;
+    width: 419px;
+
+    /* margin-left: auto;
+    margin-rigth: auto
+    margin-top: 0;/
+    margin-bottom: 0;
+    ou (1° valor sempre será o top e o bottom e o 2º valor será sempre left e rigth)   margin: 0 auto;
+    */
+}
+
+figure img {
+    filter: grayscale(0);
+    transition: 1s;}
+
+figure img:hover { filter: grayscale(100%)}
